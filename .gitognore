@@ -1,0 +1,11 @@
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/home/node/.n8n
+.n8n
+*.log
+docker-compose*
+.DS_Store
+fly.toml
+workflows-export/
