@@ -28,5 +28,5 @@ primary_region = "gdl"
   processes = ["app"]
 
 [resources]
-  memory = "1024"
+  memory = "1gb"
   cpu    = "shared"
