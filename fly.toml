@@ -1,8 +1,5 @@
-app = "n8n-gdl"
+app = "n8n-ioi"
 primary_region = "gdl"
-
-[build]
-  dockerfile = "Dockerfile"
 
 [env]
   N8N_PORT = "5678"
