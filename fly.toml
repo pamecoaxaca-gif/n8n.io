@@ -1,29 +1,23 @@
-app = "n8n-ioi"
-primary_region = "gdl"
+# fly.toml app configuration file generated for n8n-app-flyin on 2025-08-15T18:10:09Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[env]
-  N8N_PORT = "5678"
-  N8N_HOST = "0.0.0.0"
-  DB_TYPE = "postgresdb"
-  DB_POSTGRESDB_HOST = "n8n-db.internal"
-  DB_POSTGRESDB_PORT = "5432"
-  DB_POSTGRESDB_DATABASE = "n8n"
-  DB_POSTGRESDB_USER = "n8n"
-  DB_POSTGRESDB_PASSWORD = "changeme"
-  N8N_BASIC_AUTH_ACTIVE = "true"
-  N8N_BASIC_AUTH_USER = "admin"
-  N8N_BASIC_AUTH_PASSWORD = "changeme"
-  GENERIC_TIMEZONE = "America/Mexico_City"
+app = 'n8n-app-flyin'
+primary_region = 'dfw'
 
-[mounts]
-  source = "n8n_data"
-  destination = "/home/node/.n8n"
+[build]
 
-[experimental]
-  auto_stop_machines = true
+[http_service]
+  internal_port = 5678
+  force_https = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
-  processes = ["app"]
+  min_machines_running = 0
+  processes = ['app']
 
-[resources]
-  memory = "1gb"
-  cpu    = "shared"
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
